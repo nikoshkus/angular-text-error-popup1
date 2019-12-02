@@ -5,7 +5,7 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatCheckboxModule,
-  MatSnackBarModule
+  MatTooltipModule
 } from '@angular/material';
 
 import { TextErorrComponent } from './text-error.component';
@@ -20,7 +20,7 @@ import { MatSnackBarRef} from '@angular/material';
     MatCheckboxModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSnackBarModule,
+    MatTooltipModule,
     BrowserAnimationsModule
   ],
   declarations: [

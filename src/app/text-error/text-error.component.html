@@ -5,9 +5,12 @@ middle-sm middle-xs middle-lg middle-md
 '>
   <div 
     class='col-xs-2 col-lg-1 col-md-1 col-sm-1 label '
-    (click)="openSnackBar()"
     [ngClass]="{'is-error active-control': requiredFormControl.hasError('required')}"
-  ><span>Title</span><span [hidden]="!requiredFormControl.hasError('required')"> *</span></div>
+  ><span
+    [matTooltip]="getMessage()"
+    matTooltipClass='example-tooltip-red'
+    [matTooltipDisabled]="!(requiredFormControl.hasError('required'))"
+  ><span>Title</span><span [hidden]="!requiredFormControl.hasError('required')"> *</span></span></div>
   <div class='col-xs col-lg col-md col-sm'>
     <mat-form-field>
       <input [value]="'title'"

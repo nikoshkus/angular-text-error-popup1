@@ -6,8 +6,6 @@ import {
   OnInit
 } from '@angular/core';
 
-import { MatSnackBar } from '@angular/material';
-
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -24,8 +22,7 @@ export class TextErorrComponent implements OnDestroy, OnInit {
   private destroy$: Subject<boolean> = new Subject();
 
   requiredFormControl = new FormControl('textError', [Validators.required]);
-
-  constructor(public snackBar: MatSnackBar) {}
+    constructor() {}
 
   ngOnInit() {
     this.requiredFormControl.statusChanges
@@ -35,21 +32,14 @@ export class TextErorrComponent implements OnDestroy, OnInit {
     .subscribe(changes =>  this.onChange(changes));
   }
 
-  public openSnackBar() {
-    if(this.requiredFormControl.hasError('required')) {
-      const message = 'Title is required!';
-      this.snackBar.open('Title is required!', 'Close',
-      {
-        panelClass: 'error-message',
-        duration: 5000,
-      });
-    }
+  public getMessage() {
+    return 'Title is required!';
   }
 
   onChange(event): void {
     console.log('change', event);
-    if(event ==='VALID' && this.snackBar._openedSnackBarRef) {
-      this.snackBar._openedSnackBarRef.dismiss();
+    if(event ==='VALID') {
+      
     }
   }
 
