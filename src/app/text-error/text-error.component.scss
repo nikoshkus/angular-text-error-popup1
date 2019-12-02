@@ -1,0 +1,30 @@
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row, .row div {
+  margin: 0;
+  padding: 0;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.label {
+  word-wrap: break-word;
+  font-size: large;
+}
+
+.is-error {
+  color: red;
+}
+
+.error-message {
+  color: red;
+}
+
+.active-control {
+  cursor: pointer;
+}
